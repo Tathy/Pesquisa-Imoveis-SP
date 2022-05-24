@@ -2,9 +2,9 @@
 
 :open_book: Projeto desenvolvido na Imersão Dados da Alura
 
-[Link pro Google Colab](https://colab.research.google.com/drive/1DSTwxmWOApYzRQGef0kJtMMSCyjZkHc_?usp=sharing) (possivelmente mais atualizado)
-
 ## Aula 01 - Primeiro Colab com Python Pandas
+
+[Link pro Google Colab (aula 01)](https://colab.research.google.com/drive/1DSTwxmWOApYzRQGef0kJtMMSCyjZkHc_?usp=sharing)
 
 Importação da base de dados e análises básicas de algumas características dos imóveis separados por bairro.
 
