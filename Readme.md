@@ -85,4 +85,20 @@ O gráfico abaixo pode ser comparado com o acima. Ainda há outliers, mas os pre
   <img src="https://github.com/Tathy/Pesquisa-Imoveis-SP/blob/main/imagens/aula03_dest5.png?raw=true"/>
 </div>
 
+## Aula 04 - Cruzando bases de dados
+
+Nesta aula, usamos duas outras bases de dados para relacionarmos os imóveis disponíveis para venda e os dados do IBGE.
+
+- a latitude e longitude dos imóveis foram encontradas com base nos nomes das ruas utilizando uma base de dados extra
+- a longitude e latitude foram usadas para identificar os setores censitários utilizando cálculos com polígonos e uma segunda base de dados extra
+
+Os tratamentos e mesclagens resultaram em uma base de dados com todas as informações relacionadas em uma única tabela, que será utilizada em análises posteriores.
+
+Um exemplo de análise pode ser vista no gráfico abaixo. Observa-se que há uma tendência dos proprietários com maior renda residirem em imóveis de áreas com m² mais caro, mas os pontos ainda estão muito dispersos para uma conclusão satisfatória. Isto indica que esta análise pode não ser a melhor para precificação de imóveis.
+
+<div align="center">
+  <img src="https://github.com/Tathy/Pesquisa-Imoveis-SP/blob/main/imagens/aula04_dest1.png?raw=true"/>
+</div>
+
+
 🌱
