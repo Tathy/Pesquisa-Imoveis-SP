@@ -21,7 +21,7 @@ As informações presentes na coluna de valores foram divididas entre moeda (rea
 Seguem alguns gráficos e conclusões que merecem destaque.
 
 <div align="center">
-  <img margin=50px src="https://github.com/Tathy/Pesquisa-Imoveis-SP/blob/main/imagens/Hitograma_valor_imoveis.png?raw=true"/>
+  <img src="https://github.com/Tathy/Pesquisa-Imoveis-SP/blob/main/imagens/Hitograma_valor_imoveis.png?raw=true"/>
 </div>
 
 Usando um histograma, podemos observar a distribuição da quantidade de imóveis disponíveis em várias faixas de valores, quais faixas abrangem mais imóveis, e a tendência da relação quantidade de imóves x valor.
@@ -69,3 +69,20 @@ A visialização ficou totalmente distorcida por causa de um outlier, um imóvel
 <div align="center">
   <img src="https://github.com/Tathy/Pesquisa-Imoveis-SP/blob/main/imagens/aula03_dest3.png?raw=true"/>
 </div>
+
+### Limpeza de dados para remoção de mais outliers
+
+Executei alguns filtros a mais como parte de um dos desafios da aula. Foram retirados:
+
+- imóveis com mais de 6 quartos
+- imóveis com mais de 5 banheiros
+- imóveis com mais de 5 vagas
+- imóveis que continham "Sítio" ou "Chácara" presentes no nome do bairro
+
+O gráfico abaixo pode ser comparado com o acima. Ainda há outliers, mas os preços mais altos estão menos discrepantes, mesmo não havendo nenhum filtro diretamente relacionado ao valor.
+
+<div align="center">
+  <img src="https://github.com/Tathy/Pesquisa-Imoveis-SP/blob/main/imagens/aula03_dest5.png?raw=true"/>
+</div>
+
+🌱
