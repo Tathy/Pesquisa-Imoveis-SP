@@ -2,7 +2,7 @@
 
 :open_book: Projeto desenvolvido na Imersão Dados da Alura
 
-[Link pro Google Colab](https://colab.research.google.com/drive/1DSTwxmWOApYzRQGef0kJtMMSCyjZkHc_?usp=sharing) (possivelmente mais atualizado)
+[Link pro Google Colab](https://colab.research.google.com/drive/1DSTwxmWOApYzRQGef0kJtMMSCyjZkHc_?usp=sharing)
 
 ## Aula 01 - Primeiro Colab com Python Pandas
 
@@ -26,7 +26,7 @@ Seguem alguns gráficos e conclusões que merecem destaque.
 
 Usando um histograma, podemos observar a distribuição da quantidade de imóveis disponíveis em várias faixas de valores, quais faixas abrangem mais imóveis, e a tendência da relação quantidade de imóves x valor.
 
-Neste caso, a quantidade de imóveis disponíveis no dataset tente a diminuir à medida que o valor de vena aumenta. Ainda não é possível afirmar que a maior parte dos imóveis vale menos que 2 milhões, mas grande parte se encaixaria nesta afirmação.
+Neste caso, a quantidade de imóveis disponíveis no dataset tente a diminuir à medida que o valor de venda aumenta. Ainda não é possível afirmar que a maior parte dos imóveis vale menos que 2 milhões, mas grande parte se encaixaria nesta afirmação.
 
 <div align="center">
   <img src="https://github.com/Tathy/Pesquisa-Imoveis-SP/blob/main/imagens/Boxplot_precos_bairro.png?raw=true"/>
@@ -100,5 +100,50 @@ Um exemplo de análise pode ser vista no gráfico abaixo. Observa-se que há uma
   <img src="https://github.com/Tathy/Pesquisa-Imoveis-SP/blob/main/imagens/aula04_dest1.png?raw=true"/>
 </div>
 
+## Aula 05 - Machine Learning
 
-🌱
+### Correlações
+
+Foram feitas algumas análises sobre a correlação entre as variáveis disponíveis nos dados de imóveis à venda e IBGE. 
+
+Apesar de algumas parecerem promissoras, há algumas observações a serem feitas.
+- Valor_mm e Valor_anuncio, com correlação 1, uma é diretamente derivada da outra
+- As perguntas (V00x) tiveram alguns valores altos de correlação entre sim. Geralmente essas variáveis vinham em duplas, com uma medida seguida da sua variância.
+- As perguntas V005, V007, V009 e V011 tiveram a correlação mais alta com os valores de anúncio, todas relacionadas à situções financeiras das famílias.
+    - V005: Valor do rendimento nominal médio mensal das pessoas responsáveis por domicílios particulares permanentes (com e sem rendimento)
+    - V007: Valor do rendimento nominal médio mensal das pessoas responsáveis por domicílios particulares permanentes (com rendimento)
+    - V009: Valor do rendimento nominal médio mensal das pessoas de 10 anos ou mais de idade (com e sem rendimento)
+    - V011: Valor do rendimento nominal médio mensal das pessoas de 10 anos ou mais de idade (com rendimento)
+- Entretanto, as correlações com o valor do m² foram mais baixas
+
+<div align="center">
+  <img src="https://github.com/Tathy/Pesquisa-Imoveis-SP/blob/main/imagens/aula05_dest3.png?raw=true"/>
+</div>
+
+### Predições
+
+#### Regressão Linear
+
+Em seguida, foram feitas algumas predições utilizando Regressão Linear com um conjunto reduzido de variáveis. Os modelos foram avaliados via Erro Absoluto Médio (MAE) e Coeficiente de Determinação (r²).
+
+Relacionando-se Metragem, número de quartos, banheiros, vagas de garagem, latitude, longitude e todo o conjunto de perguntas do IBGE, atingimos MAE = 1333549.33 e r² = 0.403. O modelo não foi considerado bom o suficiente para predizer valores de vendas de imóveis, prevendo, inclusive, valores negativos pro anúncio.
+
+<div align="center">
+  <img src="https://github.com/Tathy/Pesquisa-Imoveis-SP/blob/main/imagens/aula05_dest1.png?raw=true"/>
+</div>
+
+#### Regressão Polinomial
+
+Após algumas tentativas com outros modelos como desafio da aula, encontrei um resultado um pouco melhor utilizando Regressão Polinomial e um conjnto de variáveis menor (Metragem, número de quartos, banheiros, vagas e a pergunta V007 do IBGE, relacionada acima). Este modelo apresentou MAE = 1214326.04 e r² = 0.456, seus pontos ficaram um pouco menos dispersos e houveram menos sugestões de preços negativos.
+
+<div align="center">
+  <img src="https://github.com/Tathy/Pesquisa-Imoveis-SP/blob/main/imagens/aula05_dest2.png?raw=true"/>
+</div>
+
+# Conclusões
+
+Os modelos estudados não apresentaram predições satisfatórias. O baixo rendimento pode estar diretamente relacionado à base de dados pequena. Uma avaliação melhor sobre variáveis escolhidas também necessitaria de mais dados.
+
+Talvez características socioeconômicas ajudem nessa predição. Fatores como segurança, proximidade a metrôs, pontos de ônibus, shoppings e comércio, disponibilidade de água e acesso facilitado a outros itens de necessidade básica costumam interferir na compra de imóveis.
+
+🎉
